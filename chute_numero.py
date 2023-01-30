@@ -4,8 +4,8 @@ import random
 class ChuteNumero:
 
     def __init__(self):
-        self.num_aleatorio = random.randint(1,6)
-        self.msg = 'Escolha um numero de 1 a 6: '
+        self.num_aleatorio = random.randint(1,100)
+        self.msg = 'Escolha um numero de 1 a 100: '
 
     def chutar(self):
         print('Numero certo:', self.num_aleatorio)

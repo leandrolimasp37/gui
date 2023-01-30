@@ -16,5 +16,6 @@ git push origin main
 
 
 # ATUALIZAÇÃO
+git add NOME_ARQUIVO (se precisar)
 git commit -m 'versao 1'
 git push origin main
