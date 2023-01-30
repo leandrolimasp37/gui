@@ -1,0 +1,16 @@
+# inicializa diretório local
+git init
+
+# adicionar os arquivos no rep local
+git add .
+
+# confirme todos os arquivos em seu projeto
+git commit -m 'versao 1'
+
+
+# adicionar rep remoto onde será feito o update do rep local
+git remote add origin https://github.com/leandrolimasp37/REPOSITORIO.git
+
+# Envia as alterações em seu rep local p/ o rep remoto especificado como origem
+git push origin main
+
