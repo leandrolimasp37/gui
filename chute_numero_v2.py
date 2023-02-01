@@ -24,6 +24,7 @@ class ChuteNumero:
                     print('PARABÉNS, VOCÊ ACERTOU !')
         except:
             print('Digite apenas numeros!')
+            self.iniciar()
 
     def pedirValorAleatorio(self):
         self.valor_do_chute = input('Chute um número: ')
