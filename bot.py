@@ -2,9 +2,9 @@ import pyautogui as pg
 import time
 class Bot:
     '''
-    --------------------
-     Bot para automação 
-    --------------------
+    --------------------------
+     Bot para Noticias do SPFC 
+    --------------------------
     '''
     def __init__(self):
         pg.PAUSE = 1
@@ -15,11 +15,14 @@ class Bot:
         pg.press('enter')
         pg.write('chrome.exe')
         pg.press('enter')
-        pg.write('http://leandrolima.rf.gd')
+        pg.write('https://ge.globo.com/')
         pg.press('enter')
-        time.sleep(3)
+        time.sleep(1)
+        '''
         pg.position()
         print(pg.position())
-        pg.click(x=1323, y=128)
+        '''
+        pg.click(x=286,y=173)
+        pg.click(x=348,y=493)
 x = Bot()
 x.iniciar()
