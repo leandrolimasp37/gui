@@ -2,14 +2,21 @@ from tkinter import *
 from tkinter.ttk import Combobox
 from tkinter import messagebox
 import os
+import webbrowser
 
 class Interface:
 
     def __init__(self):
-        pass
+        self.interface_1()
 
-    def notepad(self): os.system('notepad')
-    def mensagem(self): messagebox.showinfo(title='Creator',message='Leandro Lima')
+    def link_diretoria_ensino(self): webbrowser.open('https://deosasco.educacao.sp.gov.br')
+    def link_sed(self): webbrowser.open('https://sed.educacao.sp.gov.br')
+    def link_sei(self): webbrowser.open('https://sei.prefeitura.sp.gov.br')
+    def link_email_microsoft(self): webbrowser.open('https://outlook.office.com/mail')
+    def link_email_google(self): webbrowser.open('https://mail.google.com/mail')
+    def excel(self): os.system('start excel')
+    def word(self): os.system('start winword')
+    def mensagem(self): messagebox.showinfo(title='Desenvolvedor',message='Leandro Lima')
 
     def interface_1(self):
         # Window
@@ -22,23 +29,28 @@ class Interface:
 
         # Menu 1
         self.menu_arquivo = Menu(self.menu_barra, tearoff=0)
-        self.menu_arquivo.add_command(label='Escolas', command=self.interface_2)
-        self.menu_arquivo.add_command(label='Bloco de Notas', command=self.notepad)
+        self.menu_arquivo.add_command(label='Site da DE', command=self.link_diretoria_ensino)
+        self.menu_arquivo.add_command(label='Site da SED', command=self.link_sed)
+        self.menu_arquivo.add_command(label='Site da SEI', command=self.link_sei)
+        self.menu_arquivo.add_separator()
+        self.menu_arquivo.add_command(label='Email da Microsoft', command=self.link_email_microsoft)
+        self.menu_arquivo.add_command(label='Email da Google', command=self.link_email_google)
+        self.menu_arquivo.add_separator()
+        self.menu_arquivo.add_command(label='Consulta de Escolas', command=self.interface_2)
         self.menu_arquivo.add_separator()
         self.menu_arquivo.add_command(label='Sair', command='exit')
-        self.menu_barra.add_cascade(label='Pesquisar',menu=self.menu_arquivo)
+        self.menu_barra.add_cascade(label='Acessos',menu=self.menu_arquivo)
 
         # Menu 2
         self.menu_programa = Menu(self.menu_barra, tearoff=0)
-        self.menu_programa.add_command(label='Nada Ainda', command='')
-        self.menu_programa.add_command(label='Nada Ainda', command='')
+        self.menu_programa.add_command(label='Microsoft Excel', command=self.excel)
+        self.menu_programa.add_command(label='Microsoft Word', command=self.word)
         self.menu_barra.add_cascade(label='Programas',menu=self.menu_programa)
 
         # Menu 3
-        self.menu_ajuda = Menu(self.menu_barra, tearoff=0)
-        self.menu_ajuda.add_command(label='Ajuda', command='')
-        self.menu_ajuda.add_command(label='Sobre', command=self.mensagem)
-        self.menu_barra.add_cascade(label='Ajuda',menu=self.menu_ajuda)
+        self.menu_autor = Menu(self.menu_barra, tearoff=0)
+        self.menu_autor.add_command(label='Sobre o Autor', command=self.mensagem)
+        self.menu_barra.add_cascade(label='Sobre',menu=self.menu_autor)
 
         # Start
         self.janela_1.config(menu=self.menu_barra)
@@ -75,5 +87,3 @@ class Interface:
         self.janela_2.mainloop()
 
 x = Interface()
-x.interface_1()
-
